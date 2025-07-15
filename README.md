@@ -1,40 +1,40 @@
-PIBD - Portal de Transporte e Mobilidade
-Este é o repositório do projeto da disciplina de Projeto Integrado de Banco de Dados (PIBD), que consiste em uma aplicação desktop para gerenciar um sistema de transporte.
+# PIBD - Portal de Transporte e Mobilidade
 
-🚀 Como Executar o Projeto
+Este é o repositório do projeto da disciplina de Projeto Integrado de Banco de Dados (PIBD). A solução consiste em uma aplicação desktop desenvolvida para gerenciar um sistema de transporte de forma eficiente.
+
+## 🚀 Como Executar o Projeto
+
 Siga os passos abaixo para configurar e executar a aplicação em sua máquina local.
 
-1. Pré-requisitos
-Garanta que você tenha o seguinte software instalado:
+### 1. Pré-requisitos
 
-Python (versão 3.10 ou superior)
+Garanta que você tenha os seguintes softwares instalados em sua máquina:
 
-Git
+* **Python:** versão 3.10 ou superior
+* **Git:** para clonar o repositório
+* **MySQL:** Server e um cliente de sua preferência (como MySQL Workbench ou DBeaver)
 
-MySQL Server e um cliente como o MySQL Workbench
+### 2. Guia de Instalação
 
-2. Passo a Passo
-Clone o Repositório
-Abra seu terminal e execute o comando:
+#### Passo 1: Clonar o Repositório
 
-Bash
+Abra seu terminal ou Git Bash e execute o comando abaixo para clonar este repositório.
 
-git clone [URL_DO_SEU_REPOSITORIO_AQUI]
-cd nome-da-pasta-do-projeto
-Crie e Configure o Banco de Dados
+```bash
+git clone <URL_DO_SEU_REPOSITORIO_AQUI>
+cd <NOME_DA_PASTA_DO_PROJETO>
 
-Abra o MySQL Workbench (ou seu cliente de preferência).
+#### Passo 2: Configurar o Banco de Dados
 
-Execute o script setup_database.sql (que está neste repositório) para criar e popular o banco de dados sgci_transporte.
+1.  Abra seu cliente MySQL (MySQL Workbench, por exemplo).
+2.  Execute o script `setup_database.sql`, que se encontra na raiz deste repositório. Este script criará o banco de dados `sgci_transporte` e o populará com os dados iniciais necessários.
 
-Configure a Conexão
+#### Passo 3: Configurar a Conexão com o Banco
 
-Abra o arquivo config.py.
+1.  Localize e abra o arquivo `config.py`.
+2.  Insira a senha do seu usuário root do MySQL no campo `'password'`.
 
-Insira sua senha do MySQL no campo 'password'.
-
-Python
-
+```python
 # config.py
 DB_CONFIG = {
     'host': 'localhost',
@@ -42,29 +42,34 @@ DB_CONFIG = {
     'password': 'sua_senha_aqui',  # <-- EDITE AQUI
     'database': 'sgci_transporte'
 }
-Prepare o Ambiente Python
 
-Ainda no terminal, na pasta do projeto, crie um ambiente virtual:
+#### Passo 4: Preparar o Ambiente Python
 
-Bash
+É uma boa prática usar um ambiente virtual para isolar as dependências do projeto.
 
-py -m venv venv
-Ative o ambiente:
+1.  No terminal, dentro da pasta do projeto, crie um ambiente virtual:
+    ```bash
+    python -m venv venv
+    ```
 
-Bash
+2.  Ative o ambiente virtual:
+    * **No Windows:**
+        ```bash
+        .\venv\Scripts\activate
+        ```
+    * **No macOS/Linux:**
+        ```bash
+        source venv/bin/activate
+        ```
 
-# No Windows
-.\venv\Scripts\activate
-Instale as dependências:
+3.  Com o ambiente ativo, instale as dependências listadas no arquivo `requirements.txt`:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Bash
+### 3. Executando a Aplicação
 
-pip install -r requirements.txt
-Execute a Aplicação
+Uma vez que o ambiente esteja configurado e o banco de dados pronto, inicie a aplicação com o seguinte comando:
 
-Com o ambiente ainda ativo, inicie o programa:
-
-Bash
-
-py main.py
-A janela da aplicação deverá aparecer na sua tela.
+```bash
+python main.py

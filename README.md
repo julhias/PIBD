@@ -23,6 +23,7 @@ Abra seu terminal ou Git Bash e execute o comando abaixo para clonar este reposi
 ```bash
 git clone <URL_DO_SEU_REPOSITORIO_AQUI>
 cd <NOME_DA_PASTA_DO_PROJETO>
+'''
 
 #### Passo 2: Configurar o Banco de Dados
 
